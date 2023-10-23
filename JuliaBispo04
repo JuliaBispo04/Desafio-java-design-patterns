@@ -1,0 +1,106 @@
+public class Desafio {
+    public static 
+// Classe que representa os dados de um cliente
+public class Cliente {
+
+    // Atributos privados do cliente
+    private int id;
+    private String nome;
+    private String cep;
+    private String cidade;
+    private String estado;
+
+    // Construtor público que recebe os valores dos atributos como parâmetros
+    public Cliente(int id, String nome, String cep, String cidade, String estado) {
+        this.id = id;
+        this.nome = nome;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
+    // Métodos públicos para acessar e modificar os atributos do cliente
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    // Método que retorna uma representação textual do cliente
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cep='" + cep + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                '}';
+    }
+}
+
+// Classe que gerencia o sistema de CRM
+public class CrmService {
+
+    // Variável estática privada que armazena a instância única da classe
+    private static CrmService instance;
+
+    // Construtor privado que impede a criação de novas instâncias
+    private CrmService() {
+        super();
+    }
+
+    // Método público estático que retorna a instância existente ou cria uma nova se não houver nenhuma
+    public static CrmService getInstance() {
+        if (instance == null) {
+            instance = new CrmService();
+        }
+        return instance;
+    }
+
+    // Método público não estático que grava um cliente no sistema de CRM
+    public void gravarCliente(Cliente cliente) {
+        System.out.println("Cliente salvo no sistema de CRM:");
+        System.out.println(cliente);
+    }
+
+    // Método público não estático que atualiza um cliente no sistema de CRM
+    public void atualizarCliente(Cliente cliente) {
+        System.out.println("Cliente atualizado no sistema de CRM:");
+        System.out.println(cliente);
+    }
+}
